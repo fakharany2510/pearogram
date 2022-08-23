@@ -1,4 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:pearogram/presentation/constants/font_manager.dart';
+import 'package:pearogram/presentation/constants/style_manager.dart';
+
+import '../../presentation/constants/color_manager.dart';
 
 class AppTextField extends StatelessWidget {
   final String hint;
@@ -12,13 +17,14 @@ class AppTextField extends StatelessWidget {
     return TextFormField(
       decoration: InputDecoration(
           hintText: hint,
+          hintStyle: getRegularStyle(color: AppColor.hintFontColor ,fontSize: FontSize.s12.sp),
           enabledBorder: OutlineInputBorder(
-            borderSide: const BorderSide(width: 3, color: Colors.blue),
-            borderRadius: BorderRadius.circular(15),
+            borderSide: BorderSide(width: 3.w, color: AppColor.borderFieldDisabledColor),
+            borderRadius: BorderRadius.circular(15).r,
           ),
           focusedBorder: OutlineInputBorder(
-            borderSide: const BorderSide(width: 3, color: Colors.red),
-            borderRadius: BorderRadius.circular(15),
+            borderSide:  BorderSide(width: 3.w, color: AppColor.primaryColor),
+            borderRadius: BorderRadius.circular(15).r,
           )),
       validator: (value) {
         if (value == null || value.isEmpty) {
