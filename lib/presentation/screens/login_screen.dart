@@ -5,6 +5,7 @@ import 'package:flutter_signin_button/button_view.dart';
 import 'package:pearogram/shared/default_button.dart';
 
 import '../../shared/app_text_field.dart';
+import '../../shared/password_field.dart';
 import '../constants/color_manager.dart';
 import '../constants/font_manager.dart';
 import '../constants/style_manager.dart';
@@ -62,12 +63,12 @@ class LoginScreen extends StatelessWidget {
               ),
               SizedBox(height: 30.h,),
               AppTextField(
-                  hint: 'Username',
-                  inputType: TextInputType.emailAddress,
-                  validatorText: 'Please enter username',
+                  hint: 'Phone number',
+                  inputType: TextInputType.phone,
+                  validatorText: 'Please enter phone number',
                   controller: emailController),
               SizedBox(height: 15.h,),
-              AppTextField(
+              PasswordField(
                   hint: 'Password',
                   secure: true,
                   validatorText: 'Please enter your password',

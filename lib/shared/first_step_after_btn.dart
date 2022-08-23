@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:pearogram/presentation/screens/login_screen.dart';
 
 import '../presentation/constants/color_manager.dart';
 import '../presentation/constants/style_manager.dart';
@@ -53,6 +54,7 @@ class FirstStepAfterBtn extends StatelessWidget {
           children: [
             const Text('Already have account? '),
             InkWell(
+              onTap: ()=>Navigator.of(context).push(MaterialPageRoute(builder: (context)=>const LoginScreen())),
               child: Text(
                 'Login now!',
                 style: getRegularStyle(

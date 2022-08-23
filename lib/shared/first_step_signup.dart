@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:pearogram/shared/app_text_field.dart';
+import 'package:pearogram/shared/password_field.dart';
 
 class FirstStepSignup extends StatelessWidget {
   const FirstStepSignup({Key? key}) : super(key: key);
@@ -27,13 +28,13 @@ class FirstStepSignup extends StatelessWidget {
               validatorText: 'Please enter username',
               controller: usernameController),
           SizedBox(height: 8.h,),
-          AppTextField(
+          PasswordField(
               hint: 'Password',
               secure: true,
               validatorText: 'Please enter your password',
               controller: passwordController),
           SizedBox(height: 8.h,),
-          AppTextField(
+          PasswordField(
               secure: true,
               hint: 'Confirm password',
               validatorText: 'this field is must',
