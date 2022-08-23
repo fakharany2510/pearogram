@@ -16,15 +16,16 @@ class AppTextField extends StatelessWidget {
   Widget build(BuildContext context) {
     return TextFormField(
       decoration: InputDecoration(
+        contentPadding: EdgeInsets.all( 5),
           hintText: hint,
           hintStyle: getRegularStyle(color: AppColor.hintFontColor ,fontSize: FontSize.s12.sp),
           enabledBorder: OutlineInputBorder(
-            borderSide: BorderSide(width: 3.w, color: AppColor.borderFieldDisabledColor),
-            borderRadius: BorderRadius.circular(15).r,
+            borderSide: BorderSide(width: 1.w, color: AppColor.borderFieldDisabledColor),
+            borderRadius: BorderRadius.circular(10).r,
           ),
           focusedBorder: OutlineInputBorder(
-            borderSide:  BorderSide(width: 3.w, color: AppColor.primaryColor),
-            borderRadius: BorderRadius.circular(15).r,
+            borderSide:  BorderSide(width: 1.w, color: AppColor.primaryColor),
+            borderRadius: BorderRadius.circular(10).r,
           )),
       validator: (value) {
         if (value == null || value.isEmpty) {
