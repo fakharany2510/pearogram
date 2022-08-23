@@ -17,6 +17,7 @@ class FirstStepSignup extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         children: [
           AppTextField(
+            inputType: TextInputType.phone,
               hint: 'Telephone',
               validatorText: 'Please enter your phone number',
               controller: phoneController),

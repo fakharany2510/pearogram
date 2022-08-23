@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:pearogram/business_logic/cubit/auth_cubit.dart';
+import 'package:pearogram/presentation/screens/login_screen.dart';
 import 'package:pearogram/shared/default_button.dart';
 import 'package:pearogram/shared/first_step_after_btn.dart';
 import 'package:pearogram/shared/first_step_signup.dart';
@@ -60,7 +61,8 @@ class SignUpScreen extends StatelessWidget {
                                       context: context,
                                       builder: (BuildContext context) {
                                         return Container(
-                                          color: Colors.transparent.withAlpha(1),
+                                          color:
+                                              Colors.transparent.withAlpha(1),
                                           height: 400.h,
                                           child: Column(
                                             mainAxisAlignment:
@@ -75,13 +77,18 @@ class SignUpScreen extends StatelessWidget {
                                                 ),
                                               ),
                                               const Text(
-                                                  '''Thanks For providing your Info Welcome
+                                                '''Thanks For providing your Info Welcome
 to our educational world, your success 
-is our Goal .''',textAlign: TextAlign.center,),
+is our Goal .''',
+                                                textAlign: TextAlign.center,
+                                              ),
                                               DefaultButton(
                                                   btnText: 'Done',
                                                   press: () {
-                                                    Navigator.pop(context);
+                                                    Navigator.of(context).push(
+                                                        MaterialPageRoute(
+                                                            builder: (context) =>
+                                                                const LoginScreen()));
                                                   },
                                                   width: 300.w,
                                                   height: 45.h,

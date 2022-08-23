@@ -25,6 +25,7 @@ class SecondStepSignup extends StatelessWidget {
           SizedBox(height: 8.h,),
           AppTextField(
               hint: 'Email',
+              inputType: TextInputType.emailAddress,
               validatorText: 'Please enter your email',
               controller: emailController),
           SizedBox(height: 8.h,),
@@ -36,6 +37,7 @@ class SecondStepSignup extends StatelessWidget {
           SizedBox(height: 8.h,),
           AppTextField(
               secure: true,
+              inputType: TextInputType.phone,
               hint: 'Parent Phone',
               validatorText: 'Please enter your parent phone',
               controller: parentPhoneController),

@@ -10,13 +10,15 @@ class AppTextField extends StatelessWidget {
   final String hint;
   final TextEditingController controller;
   final String validatorText;
+  TextInputType inputType;
   bool secure;
-  AppTextField({Key? key,this.secure=false, required this.hint, required this.validatorText, required this.controller}) : super(key: key);
+  AppTextField({Key? key,this.secure=false, required this.hint, required this.validatorText, required this.controller,  this.inputType= TextInputType.text}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return TextFormField(
       obscureText: secure,
+      keyboardType: inputType,
       decoration: InputDecoration(
         contentPadding:const EdgeInsets.all(AppPadding.p8).r,
           hintText: hint,
