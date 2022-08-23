@@ -3,6 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:pearogram/business_logic/cubit/auth_cubit.dart';
 import 'package:pearogram/shared/default_button.dart';
+import 'package:pearogram/shared/first_step_after_btn.dart';
 import 'package:pearogram/shared/first_step_signup.dart';
 import 'package:pearogram/shared/second_step_signup.dart';
 import '../../business_logic/cubit/auth_states.dart';
@@ -54,68 +55,55 @@ class SignUpScreen extends StatelessWidget {
                               DefaultButton(
                                 press: () {
                                   cubit.onStepContinue();
+                                  if (cubit.index == 1) {
+                                    showModalBottomSheet<void>(
+                                      context: context,
+                                      builder: (BuildContext context) {
+                                        return Container(
+                                          color: Colors.transparent.withAlpha(1),
+                                          height: 400.h,
+                                          child: Column(
+                                            mainAxisAlignment:
+                                                MainAxisAlignment.spaceEvenly,
+                                            mainAxisSize: MainAxisSize.min,
+                                            children: <Widget>[
+                                              SizedBox(
+                                                height: 250,
+                                                child: Image.asset(
+                                                  'assets/images/bottomsheet.png',
+                                                  fit: BoxFit.contain,
+                                                ),
+                                              ),
+                                              const Text(
+                                                  '''Thanks For providing your Info Welcome
+to our educational world, your success 
+is our Goal .''',textAlign: TextAlign.center,),
+                                              DefaultButton(
+                                                  btnText: 'Done',
+                                                  press: () {
+                                                    Navigator.pop(context);
+                                                  },
+                                                  width: 300.w,
+                                                  height: 45.h,
+                                                  activeColor:
+                                                      AppColor.primaryColor),
+                                            ],
+                                          ),
+                                        );
+                                      },
+                                    );
+                                  }
                                 },
                                 btnText: cubit.index == 0 ? 'Next' : "Finish!",
                                 activeColor: AppColor.primaryColor,
                                 width: 300.w,
                                 height: 45.h,
                               ),
-                              SizedBox(height: 10.h,),
+                              SizedBox(
+                                height: 10.h,
+                              ),
                               cubit.index == 0
-                                  ? Column(
-                                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                                      crossAxisAlignment:
-                                          CrossAxisAlignment.center,
-                                      children: [
-                                        FittedBox(
-                                          child: Row(
-                                            children: [
-                                              const Text(
-                                                  'By signing up, you agree to our'),
-                                              InkWell(
-                                                child: Text(
-                                                  'Terms of Service',
-                                                  style: getRegularStyle(
-                                                      color:
-                                                          AppColor.primaryColor),
-                                                ),
-                                              ),
-                                            ],
-                                          ),
-                                        ),
-                                        Row(
-                                          mainAxisAlignment:
-                                              MainAxisAlignment.center,
-                                          children: [
-                                            const Text('and'),
-                                            InkWell(
-                                              child: Text(
-                                                'Privacy Policy',
-                                                style: getRegularStyle(
-                                                    color:
-                                                        AppColor.primaryColor),
-                                              ),
-                                            )
-                                          ],
-                                        ),
-                                        SizedBox(height: 200.h,),
-                                        Row(
-                                          mainAxisAlignment:
-                                          MainAxisAlignment.center,
-                                          children: [
-                                            const Text('Already have account? '),
-                                            InkWell(
-                                              child: Text(
-                                                'Login now!',
-                                                style: getRegularStyle(
-                                                    color:
-                                                    AppColor.primaryColor),
-                                              ),
-                                            )
-                                          ],
-                                        ),
-                                      ],
-                                    )
+                                  ? const FirstStepAfterBtn()
                                   : const SizedBox(),
                             ],
                           );
