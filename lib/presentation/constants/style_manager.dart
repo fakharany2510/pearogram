@@ -8,7 +8,8 @@ TextStyle _getTextStyle(double fontSize, FontWeight fontWeight, Color color,
       fontFamily: FontConstants.fontFamily,
       color: color,
       decoration: decoration,
-      fontWeight: fontWeight);
+      fontWeight: fontWeight,
+  );
 }
 
 // regular style
@@ -43,7 +44,7 @@ TextStyle getLightStyle(
 // bold style
 
 TextStyle getBoldStyle(
-    {double fontSize = FontSize.s12, required Color color}) {
+    {double fontSize = FontSize.s12, required Color color , }) {
   return _getTextStyle(fontSize, FontWeightManager.bold, color);
 }
 

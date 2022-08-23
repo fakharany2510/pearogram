@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:pearogram/presentation/screens/on_boarding.dart';
 import 'package:pearogram/presentation/screens/sign_up_screen.dart';
 
 void main() {
@@ -13,15 +14,14 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ScreenUtilInit(
-        designSize: const Size(392.7, 781.1),
+        designSize: const Size(411.4, 820.6),
         minTextAdapt: true,
         splitScreenMode: true,
         builder: (context, child) {
           return MaterialApp(
               theme: ThemeData(), debugShowCheckedModeBanner: false, home: child);
         },
-        child:
-      const SignUpScreen(),
+        child: OnBoardingScreen(),
     );
   }
 }
