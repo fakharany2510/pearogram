@@ -35,26 +35,66 @@ class SignUpScreen extends StatelessWidget {
                   Text(
                     'Sign up as Student',
                     style: getBoldStyle(
-                        color:Colors.black,
-                        fontSize: FontSize.s16.sp),
+                        color: Colors.black, fontSize: FontSize.s16.sp),
                   ),
                   Expanded(
                     child: Theme(
                       data: ThemeData(
                         colorScheme: Theme.of(context).colorScheme.copyWith(
-                          primary: AppColor.primaryColor,
-                          background:  AppColor.hintFontColor,
-                          secondary: AppColor.hintFontColor,
-                        ),
+                              primary: AppColor.primaryColor,
+                              background: AppColor.hintFontColor,
+                              secondary: AppColor.hintFontColor,
+                            ),
                       ),
                       child: Stepper(
-                        controlsBuilder: (context,_) {
-                          return Center(
-                            child: DefaultButton( press: (){
-                              cubit.onStepContinue();
-                            }, btnText:cubit.index==0? 'Next':"Finish!",activeColor: AppColor.primaryColor,
+                        controlsBuilder: (context, _) {
+                          return Column(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            crossAxisAlignment: CrossAxisAlignment.center,
+                            children: [
+                              DefaultButton(
+                                press: () {
+                                  cubit.onStepContinue();
+                                },
+                                btnText: cubit.index == 0 ? 'Next' : "Finish!",
+                                activeColor: AppColor.primaryColor,
                                 width: 300.w,
-                                height: 45.h,)
+                                height: 45.h,
+                              ),
+                              cubit.index == 0
+                                  ? Column(
+                                crossAxisAlignment: CrossAxisAlignment.center,
+                                    children: [
+                                      Row(
+                                          children: [
+                                            const Text(
+                                                'By signing up, you agree to our'),
+                                            TextButton(
+                                                onPressed: () {},
+                                                child: Text(
+                                                  'Terms of Service',
+                                                  style: getRegularStyle(
+                                                      color: AppColor.primaryColor),
+                                                )),
+                                          ],
+                                        ),Row(
+                                        mainAxisAlignment: MainAxisAlignment.center,
+                                          children: [
+                                            const Text(
+                                                'and'),
+                                            TextButton(
+                                                onPressed: () {},
+                                                child: Text(
+                                                  'Privacy Policy',
+                                                  style: getRegularStyle(
+                                                      color: AppColor.primaryColor),
+                                                )),
+                                          ],
+                                        ),
+                                    ],
+                                  )
+                                  : const SizedBox(),
+                            ],
                           );
                         },
                         elevation: 0,
@@ -72,10 +112,14 @@ class SignUpScreen extends StatelessWidget {
                         steps: <Step>[
                           cubit.stepWidget(
                               content: const FirstStepSignup(),
-                              title: 'Phone number',currentIndex: cubit.index,stepNum: 0),
+                              title: 'Phone number',
+                              currentIndex: cubit.index,
+                              stepNum: 0),
                           cubit.stepWidget(
                               content: const SecondStepSignup(),
-                              title: 'Profile', currentIndex: cubit.index,stepNum: 1),
+                              title: 'Profile',
+                              currentIndex: cubit.index,
+                              stepNum: 1),
                         ],
                       ),
                     ),

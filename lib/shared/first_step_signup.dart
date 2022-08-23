@@ -8,6 +8,9 @@ class FirstStepSignup extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     var phoneController = TextEditingController();
+    var usernameController = TextEditingController();
+    var passwordController = TextEditingController();
+    var confirmPasswordController = TextEditingController();
     return Padding(
       padding: const EdgeInsets.all(8.0),
       child: Column(
@@ -19,24 +22,21 @@ class FirstStepSignup extends StatelessWidget {
               controller: phoneController),
           SizedBox(height: 8.h,),
           AppTextField(
-              hint: 'Telephone',
-              validatorText: 'Please enter your phone number',
-              controller: phoneController),
+              hint: 'Username',
+              validatorText: 'Please enter username',
+              controller: usernameController),
           SizedBox(height: 8.h,),
           AppTextField(
-              hint: 'Telephone',
-              validatorText: 'Please enter your phone number',
-              controller: phoneController),
+              hint: 'Password',
+              secure: true,
+              validatorText: 'Please enter your password',
+              controller: passwordController),
           SizedBox(height: 8.h,),
           AppTextField(
-              hint: 'Telephone',
-              validatorText: 'Please enter your phone number',
-              controller: phoneController),
-          SizedBox(height: 8.h,),
-          AppTextField(
-              hint: 'Telephone',
-              validatorText: 'Please enter your phone number',
-              controller: phoneController),
+              secure: true,
+              hint: 'Confirm password',
+              validatorText: 'this field is must',
+              controller: confirmPasswordController),
         ],
       ),
     );
