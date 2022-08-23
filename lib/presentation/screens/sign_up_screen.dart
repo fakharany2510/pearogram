@@ -49,7 +49,6 @@ class SignUpScreen extends StatelessWidget {
                       child: Stepper(
                         controlsBuilder: (context, _) {
                           return Column(
-                            mainAxisAlignment: MainAxisAlignment.center,
                             crossAxisAlignment: CrossAxisAlignment.center,
                             children: [
                               DefaultButton(
@@ -61,38 +60,62 @@ class SignUpScreen extends StatelessWidget {
                                 width: 300.w,
                                 height: 45.h,
                               ),
+                              SizedBox(height: 10.h,),
                               cubit.index == 0
                                   ? Column(
-                                crossAxisAlignment: CrossAxisAlignment.center,
-                                    children: [
-                                      Row(
-                                          children: [
-                                            const Text(
-                                                'By signing up, you agree to our'),
-                                            TextButton(
-                                                onPressed: () {},
+                                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                                      crossAxisAlignment:
+                                          CrossAxisAlignment.center,
+                                      children: [
+                                        FittedBox(
+                                          child: Row(
+                                            children: [
+                                              const Text(
+                                                  'By signing up, you agree to our'),
+                                              InkWell(
                                                 child: Text(
                                                   'Terms of Service',
                                                   style: getRegularStyle(
-                                                      color: AppColor.primaryColor),
-                                                )),
-                                          ],
-                                        ),Row(
-                                        mainAxisAlignment: MainAxisAlignment.center,
+                                                      color:
+                                                          AppColor.primaryColor),
+                                                ),
+                                              ),
+                                            ],
+                                          ),
+                                        ),
+                                        Row(
+                                          mainAxisAlignment:
+                                              MainAxisAlignment.center,
                                           children: [
-                                            const Text(
-                                                'and'),
-                                            TextButton(
-                                                onPressed: () {},
-                                                child: Text(
-                                                  'Privacy Policy',
-                                                  style: getRegularStyle(
-                                                      color: AppColor.primaryColor),
-                                                )),
+                                            const Text('and'),
+                                            InkWell(
+                                              child: Text(
+                                                'Privacy Policy',
+                                                style: getRegularStyle(
+                                                    color:
+                                                        AppColor.primaryColor),
+                                              ),
+                                            )
                                           ],
                                         ),
-                                    ],
-                                  )
+                                        SizedBox(height: 200.h,),
+                                        Row(
+                                          mainAxisAlignment:
+                                          MainAxisAlignment.center,
+                                          children: [
+                                            const Text('Already have account? '),
+                                            InkWell(
+                                              child: Text(
+                                                'Login now!',
+                                                style: getRegularStyle(
+                                                    color:
+                                                    AppColor.primaryColor),
+                                              ),
+                                            )
+                                          ],
+                                        ),
+                                      ],
+                                    )
                                   : const SizedBox(),
                             ],
                           );

@@ -12,7 +12,7 @@ class FirstStepSignup extends StatelessWidget {
     var passwordController = TextEditingController();
     var confirmPasswordController = TextEditingController();
     return Padding(
-      padding: const EdgeInsets.all(8.0),
+      padding: const EdgeInsets.symmetric(vertical: 15,horizontal: 8).r,
       child: Column(
         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         children: [
