@@ -8,13 +8,16 @@ class DetailsHeadLinesWidget extends StatelessWidget {
   final double preSizedHeight;
   final double postSizedHeight;
   final String title;
-  const DetailsHeadLinesWidget({Key? key,  this.preSizedHeight=15, required this.title, this.postSizedHeight=15}) : super(key: key);
+  final double fontSize;
+  const DetailsHeadLinesWidget({Key? key,  this.preSizedHeight=15, required this.title, this.postSizedHeight=15,  this.fontSize= FontSize.s20}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return Column(children: [
       SizedBox(height: preSizedHeight.h,),
-      Text(title,style: getBoldStyle(color:Colors.black,fontSize: FontSize.s20.sp),),
+      SizedBox(
+          width: 380.w,
+          child: Text(title,style: getBoldStyle(color:Colors.black,fontSize:fontSize.sp),)),
       SizedBox(height: postSizedHeight.h,),
     ],);
   }

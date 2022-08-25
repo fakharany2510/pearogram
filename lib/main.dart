@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:pearogram/presentation/screens/instrucor_lessons_screen.dart';
 import 'package:pearogram/presentation/screens/on_boarding.dart';
 import 'package:pearogram/presentation/screens/sign_up_screen.dart';
 
@@ -21,7 +22,7 @@ class MyApp extends StatelessWidget {
           return MaterialApp(
               theme: ThemeData(), debugShowCheckedModeBanner: false, home: child);
         },
-        child: OnBoardingScreen(),
+        child: const OnBoardingScreen(),
     );
   }
 }

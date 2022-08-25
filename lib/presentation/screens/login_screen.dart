@@ -2,10 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_signin_button/button_list.dart';
 import 'package:flutter_signin_button/button_view.dart';
-import 'package:pearogram/presentation/screens/all_courses_screen.dart';
-import 'package:pearogram/presentation/screens/instructor_details.dart';
-import 'package:pearogram/shared/default_button.dart';
-
+import 'package:pearogram/presentation/screens/instrucor_lessons_screen.dart';
+import '../../presentation/screens/all_courses_screen.dart';
+import '../../shared/default_button.dart';
 import '../../shared/app_text_field.dart';
 import '../../shared/password_field.dart';
 import '../constants/color_manager.dart';
@@ -77,7 +76,7 @@ class LoginScreen extends StatelessWidget {
                   controller: passwordController),
                SizedBox(height: 20.h,),
               DefaultButton(btnText: 'Login', press: (){
-                Navigator.push(context, MaterialPageRoute(builder: (context)=>const AllCoursesScreen()));
+                Navigator.push(context, MaterialPageRoute(builder: (context)=>const InstructorLessonsScreen()));
               },  width: 300.w,
                   height: 45.h, activeColor: AppColor.primaryColor),
               SizedBox(height: 15.h,),

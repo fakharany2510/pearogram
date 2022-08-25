@@ -5,6 +5,8 @@ class AppColor{
   static Color primaryColor = HexColor('#89A71A');
   static Color lightPrimaryColor = HexColor('#A5C23984');
   static Color white = HexColor('#FFFFFF');
+  static Color softSkillContainer = HexColor('#FFEAA757');
+  static Color softSkillText = HexColor('#FCC153FC');
   static Color headLineColor = HexColor('#00000');
   static Color stepperTitleColor = HexColor('#33426BFC');
   static Color borderFieldDisabledColor = HexColor('#7070704D');

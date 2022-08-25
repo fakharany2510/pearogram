@@ -43,6 +43,7 @@ dependencies:
   flutter_bloc: ^8.0.1
   flutter_signin_button: ^2.0.0
   readmore: ^2.2.0
+  container_tab_indicator: ^0.3.0
 
 
 dev_dependencies:

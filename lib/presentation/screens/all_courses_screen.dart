@@ -14,7 +14,6 @@ class AllCoursesScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    bool selected = false;
     return Scaffold(
       appBar: AppBar(
         title: Text(
