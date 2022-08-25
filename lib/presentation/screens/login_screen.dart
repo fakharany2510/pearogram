@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_signin_button/button_list.dart';
 import 'package:flutter_signin_button/button_view.dart';
+import 'package:pearogram/presentation/screens/all_courses_screen.dart';
+import 'package:pearogram/presentation/screens/instructor_details.dart';
 import 'package:pearogram/shared/default_button.dart';
 
 import '../../shared/app_text_field.dart';
@@ -18,7 +20,7 @@ class LoginScreen extends StatelessWidget {
     var emailController = TextEditingController();
     var passwordController = TextEditingController();
     return Scaffold(
-      appBar: AppBar(backgroundColor: Colors.transparent,elevation: 0,leading:const Icon(Icons.arrow_back,color: Colors.black,),),
+      appBar: AppBar(backgroundColor: Colors.transparent,elevation: 0,iconTheme:const IconThemeData(color: Colors.black),),
       body: SingleChildScrollView(
         child: Padding(
           padding: const EdgeInsets.only(left: 50.0,right: 50,bottom: 50).r,
@@ -74,7 +76,9 @@ class LoginScreen extends StatelessWidget {
                   validatorText: 'Please enter your password',
                   controller: passwordController),
                SizedBox(height: 20.h,),
-              DefaultButton(btnText: 'Login', press: (){},  width: 300.w,
+              DefaultButton(btnText: 'Login', press: (){
+                Navigator.push(context, MaterialPageRoute(builder: (context)=>const AllCoursesScreen()));
+              },  width: 300.w,
                   height: 45.h, activeColor: AppColor.primaryColor),
               SizedBox(height: 15.h,),
                TextButton(onPressed: (){}, child:  Text('Forget Password?',style: getBoldStyle(fontSize: FontSize.s16,color: Colors.black54),)),

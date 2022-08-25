@@ -55,7 +55,7 @@ class SignUpScreen extends StatelessWidget {
                             children: [
                               DefaultButton(
                                 press: () {
-                                  cubit.onStepContinue();
+
                                   if (cubit.index == 1) {
                                     showModalBottomSheet<void>(
                                       context: context,
@@ -97,9 +97,11 @@ is our Goal .''',
                                             ],
                                           ),
                                         );
+
                                       },
                                     );
                                   }
+                                  cubit.onStepContinue();
                                 },
                                 btnText: cubit.index == 0 ? 'Next' : "Finish!",
                                 activeColor: AppColor.primaryColor,
