@@ -14,7 +14,7 @@ class PlayWidget extends StatelessWidget {
       required this.iconColor,
       required this.containerColor,
       this.shadow = 2,
-      this.height = 15,
+      this.height = 60,
       this.radius = 44,
         this.icon=Icons.play_arrow_outlined})
       : super(key: key);
